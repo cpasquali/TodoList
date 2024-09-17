@@ -30,7 +30,7 @@ const Sidebar = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                Offcanvas
+                Menu
               </h5>
               <button
                 type="button"

@@ -31,8 +31,8 @@ export default function TodoList() {
   const notify = (message: string, type: "success" | "error") => {
     if (type === "success") {
       toast.success(message, {
-        position: "top-right",
-        autoClose: 5000,
+        position: "top-left",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -41,8 +41,8 @@ export default function TodoList() {
       });
     } else if (type === "error") {
       toast.error(message, {
-        position: "top-right",
-        autoClose: 5000,
+        position: "top-left",
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -58,8 +58,7 @@ export default function TodoList() {
     );
     if (todo === "") {
       notify("¡Campo incompleto, por favor completelo!", "error");
-    }
-    if (repetido) {
+    } else if (repetido) {
       notify("¡La tarea ya existe!", "error");
     } else {
       const newTodo = { text: value, completed: false };
