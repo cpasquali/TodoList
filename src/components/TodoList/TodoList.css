@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 100px;
+}
+
+.todosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-floating {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+}
+
+.todoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  border: 1px solid rgba(128, 128, 128, 0.349);
+  padding: 0 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s, text-decoration 0.3s;
+  overflow: hidden;
+}
+
+.todoContainer.complete {
+  background-color: rgba(92, 175, 89, 0.349);
+  text-decoration: line-through;
+  color: #4caf50;
+}
+
+.todoContainer p {
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btnContainer ion-icon {
+  font-size: 24px;
+}
+
+@media (width <= 531px) {
+  .form-floating {
+    flex-direction: column;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+}
