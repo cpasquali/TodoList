@@ -98,8 +98,8 @@ export default function TodoList() {
   }, [historyTodo]);
 
   return (
-    <section className="container">
-      <h2>Ingresa las tareas para no olvidarte</h2>
+    <main className="main">
+      <h2>Escribe tu próximo logro</h2>
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -114,27 +114,57 @@ export default function TodoList() {
           Agregar
         </button>
       </div>
-      <section className="todosContainer">
-        {todoList.map((todo) => (
-          <article
-            key={todo.text}
-            className={`todoContainer ${todo.completed ? "complete" : ""}`}
-          >
-            <p>{todo.text}</p>
-            <button className="btnContainer">
-              <IonIcon
-                icon={trashOutline}
-                onClick={() => removeTodo(todo.text)}
-              />
-              <IonIcon
-                icon={todo.completed ? closeOutline : checkmarkOutline}
-                onClick={() => handleCompleteTodo(todo.text)}
-              />
-            </button>
-          </article>
-        ))}
+      <section className="container">
+        <article className="todosContainer">
+          <h4>Tareas Incompletas</h4>
+          {todoList.map(
+            (todo) =>
+              !todo.completed && (
+                <article
+                  key={todo.text}
+                  className={`todoCard ${todo.completed ? "complete" : ""}`}
+                >
+                  <p>{todo.text}</p>
+                  <button className="btnContainer">
+                    <IonIcon
+                      icon={trashOutline}
+                      onClick={() => removeTodo(todo.text)}
+                    />
+                    <IonIcon
+                      icon={todo.completed ? closeOutline : checkmarkOutline}
+                      onClick={() => handleCompleteTodo(todo.text)}
+                    />
+                  </button>
+                </article>
+              )
+          )}
+        </article>
+        <article className="todosContainer">
+          <h4>Tareas Completadas</h4>
+          {todoList.map(
+            (todo) =>
+              todo.completed && (
+                <article
+                  key={todo.text}
+                  className={`todoCard ${todo.completed ? "complete" : ""}`}
+                >
+                  <p>{todo.text}</p>
+                  <button className="btnContainer">
+                    <IonIcon
+                      icon={trashOutline}
+                      onClick={() => removeTodo(todo.text)}
+                    />
+                    <IonIcon
+                      icon={todo.completed ? closeOutline : checkmarkOutline}
+                      onClick={() => handleCompleteTodo(todo.text)}
+                    />
+                  </button>
+                </article>
+              )
+          )}
+        </article>
       </section>
       <ToastContainer />
-    </section>
+    </main>
   );
 }

@@ -46,7 +46,7 @@ export default function HistoryTodoContainer() {
             {historyTodos.map((todo, index) => (
               <article
                 key={index}
-                className={`todoContainer ${
+                className={`todoCard ${
                   todo.completed ? "complete" : "incomplete"
                 }`}
               >

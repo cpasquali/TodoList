@@ -1,4 +1,4 @@
-.container {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,10 +7,10 @@
   margin-top: 100px;
 }
 
-.todosContainer {
+.container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  gap: 60px;
 }
 
 .form-floating {
@@ -28,11 +28,11 @@
   height: 50px;
 }
 
-.todoContainer {
+.todoCard {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   border-radius: 5px;
   width: 250px;
   height: 50px;
@@ -41,15 +41,21 @@
   box-sizing: border-box;
   transition: background-color 0.3s, text-decoration 0.3s;
   overflow: hidden;
+  margin-bottom: 10px;
+  transition: all 0.2s;
 }
 
-.todoContainer.complete {
+.todoCard.complete {
   background-color: rgba(92, 175, 89, 0.349);
   text-decoration: line-through;
   color: #4caf50;
 }
 
-.todoContainer p {
+.todoCard.complete:hover {
+  border: 1px solid #4caf50;
+}
+
+.todoCard p {
   margin: 0;
   flex: 1;
   overflow: hidden;
@@ -76,12 +82,23 @@
   font-size: 24px;
 }
 
-@media (width <= 531px) {
+@media (width <= 537px) {
   .form-floating {
     flex-direction: column;
   }
 
-  .container h2 {
+  main h2 {
     font-size: 20px;
   }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+.todosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
